@@ -1,0 +1,879 @@
+<!doctype html>
+<html lang="en" style="height: 100%">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />     
+	<title>光陰憶樹</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script language="javascript">  
+            function imgdragstart(){return false;}  
+    </script>
+    <style>
+        body{ 
+            overflow-x:hidden; 
+            overflow-y:hidden; 
+        }
+        .bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: -999;
+        }
+        .bg img {
+            min-height: 100%;
+            min-width: 1000px;
+            width: 100%;
+        }
+        @media screen and (max-width: 1000px) {
+            img.bg {
+                left: 50%;
+                margin-left: -500px;
+            }
+        }
+        .col-sm-1-5,
+        .col-md-1-5,
+        .col-lg-1-5 {
+            position: relative;
+            min-height: 1px;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        .col-xs-1-5 {
+            width: 20%;
+            float: left;
+        }
+        @media (min-width: 768px) {
+            .col-sm-1-5 {
+                width: 20%;
+                float: left;
+            }
+        }
+        @media (min-width: 992px) {
+            .col-md-1-5 {
+                width: 20%;
+                float: left;
+            }
+        }
+        @media (min-width: 1200px) {
+            .col-lg-1-5 {
+                width: 20%;
+                float: left;
+            }
+        }
+        #P1, #WP1, #WP2, #WP3, #WP4, #WP5, #WP6, #WP7{
+            position:absolute;
+            z-index:2;
+        }
+        #controlla1, #controlla2, #controlla3, #controlla4, #controlla5, #controlla6, #controlla7{
+            position:absolute;
+            z-index:3;
+        }
+        #controllb1, #controllb2, #controllb3, #controllb4, #controllb5, #controllb6, #controllb7{
+            position:absolute;
+            z-index:4;
+        }
+        #controllc1, #controllc2, #controllc3, #controllc4, #controllc5, #controllc6, #controllc7{
+            position:absolute;
+            z-index:5;
+        }
+        #controlld1, #controlld2, #controlld3, #controlld4, #controlld5, #controlld6, #controlld7{
+            position:absolute;
+            z-index:6;
+        }
+        #thumbnail1, #thumbnail2, #thumbnail3, #thumbnail4, #thumbnail5, #thumbnail6, #thumbnail7{
+            z-index:0;
+        }  
+        #picture1,#picture2,#picture3,#picture4,#picture5,#picture6,#picture7,#picture8,#picture9{
+            height:50%;
+            width:2%;
+            display:none;
+            position:absolute;
+            top: 10%;
+            left:-15%;
+            background:#F2E325;
+            filter:Alpha(Opacity=40);
+            z-index:1;
+        }
+        #up {
+            position:absolute;
+            height:100%;
+            width:100%;
+            left:-5%;
+        }
+        #NULL{
+            -moz-user-select: none;   
+            -webkit-user-select: none;   
+            -ms-user-select: none;   
+            -khtml-user-select: none;   
+            user-select: none;  
+        }
+
+    </style>
+
+</head>
+<body>
+        
+        
+        <div class="row">
+
+                <div class="row">
+                        <div class="col-md-1-5 col-xs-6 col-sm-1-5 col-lg-1-5">
+                            <a href="tree_index.html"><img src="logo-01.png" id="form1" width="90%" onmouseover="funa();fun1();" class="img-responsive center-block animated fadeInDown" style="animation-duration: 1.5s;"></a>
+                        </div>
+                        <div class="col-md-1-5 col-xs-1-1 col-sm-1-5 col-lg-1-5"></div>
+                        <div class="col-md-1-5 col-xs-1-1 col-sm-1-5 col-lg-1-5"></div>
+                        <div class="col-md-1-5 col-xs-1-1 col-sm-1-5 col-lg-1-5"></div>
+                        <div class="col-md-1-5 col-xs-6 col-sm-1-5 col-lg-1-5">
+                            <a href="tree_member.html"><img src="member-01.png" id="form1" width="90%" onmouseover="funa();fun1();" class="img-responsive center-block animated fadeInDown" style="animation-duration: 1.5s;"></a>
+                        </div>
+                        
+                </div>
+
+                <div class="row">
+                        <div class="col-md-6 col-xs-12 col-sm-6 col-lg-6">
+                        <div class="row">
+                                <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"><br><br></div>
+                        </div>
+                        <div class="row">
+                                <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4 animated fadeInLeft" style="animation-duration: 1.5s;" id="thumbnail1" onmouseover="fun0(this);"><div id="picture1"></div><img src="TM_1_1.png" width="30%" class="img-responsive left-block" ></div>
+                        </div>
+                        <div class="row">
+                                <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4 animated fadeInLeft" style="animation-duration: 1.6s;" id="thumbnail2" onmouseover="fun0(this);"><div id="picture2"></div><img src="TM_2_1.png" width="30%" class="img-responsive left-block" ></div>
+        
+                        </div>
+                        <div class="row">
+                                <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4 animated fadeInLeft" style="animation-duration: 1.7s;" id="thumbnail3" onmouseover="fun0(this);"><div id="picture3"></div><img src="TM_3_1.png" width="30%" class="img-responsive left-block" ></div>
+                        </div>
+                        <div class="row">
+                                <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4 animated fadeInLeft" style="animation-duration: 1.8s;" id="thumbnail4" onmouseover="fun0(this);"><div id="picture4"></div><img src="TM_4_1.png" width="30%" class="img-responsive left-block" ></div>
+        
+                        </div>
+                        <div class="row">
+                                <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4 animated fadeInLeft" style="animation-duration: 1.9s;" id="thumbnail5" onmouseover="fun0(this);"><div id="picture5"></div><img src="TM_5_1.png" width="30%" class="img-responsive left-block" ></div>
+        
+                        </div>
+                        <div class="row">
+                                <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4 animated fadeInLeft" style="animation-duration: 2.0s;" id="thumbnail6" onmouseover="fun0(this);"><div id="picture6"></div><img src="TM_6_1.png" width="30%" class="img-responsive left-block" ></div>
+        
+                        </div>
+                        <div class="row">
+                                <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4 animated fadeInLeft" style="animation-duration: 2.1s;" id="thumbnail7" onmouseover="fun0(this);"><div id="picture7"></div><img src="TM_7_1.png" width="30%" class="img-responsive left-block" ></div>
+        
+                        </div>
+                        <div class="row">
+                                <div class="col-md-0 col-xs-2 col-sm-0 col-lg-0"></div>
+                                <div class="col-md-0 col-xs-6 col-sm-0 col-lg-0"><img src="NULL1.jpg" width="90%" class="img-responsive left-block" style="opacity:0;" id = "NULL"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-0 col-xs-4 col-sm-0 col-lg-0"></div>
+
+                    <div class="col-md-6 col-xs-8 col-sm-6 col-lg-6">
+                         <div id="up">
+                                <img src="MP_1.png" id="P1" width="80%" class="img-responsive center-block animated rotateIn" style="animation-duration: 1s;">
+                                <img src="MP_2.png" id="P1" width="80%" class="img-responsive center-block animated rotateIn" style="animation-duration: 1.1s;">
+                                <img src="MP_3.png" id="P1" width="80%" class="img-responsive center-block animated rotateIn" style="animation-duration: 1.2s;">
+                                <img src="MP_4.png" id="P1" width="80%" class="img-responsive center-block animated rotateIn" style="animation-duration: 1.3s;">
+                                <img src="MP_5.png" id="P1" width="80%" class="img-responsive center-block animated rotateIn" style="animation-duration: 1.4s;">
+                                <img src="MP_6.png" id="P1" width="80%" class="img-responsive center-block animated rotateIn" style="animation-duration: 1.5s;">
+                                <img src="MP_7.png" id="P1" width="80%" class="img-responsive center-block animated rotateIn" style="animation-duration: 1.6s;">
+                                <img src="MP_8.png" id="P1" width="80%" class="img-responsive center-block animated rotateIn" style="animation-duration: 1.7s;">
+                                <img src="MP_9.png" id="P1" width="80%" class="img-responsive center-block animated rotateIn" style="animation-duration: 1.8s;">
+
+                                <img src="whitepoint.png" id="WP1" onmouseover="fun0(this);" width="2.5%" class="img-responsive center-block animated fadeIn" style="animation-duration: 5s; margin:12.8%;left:13.4%;"> 
+                                <img src="whitepoint.png" id="WP2" onmouseover="fun0(this);" width="2.5%" class="img-responsive center-block animated fadeIn" style="animation-duration: 5s; margin:34.52%;left:-20.15%;">     
+                                <img src="whitepoint.png" id="WP3" onmouseover="fun0(this);" width="2.5%" class="img-responsive center-block animated fadeIn" style="animation-duration: 5s; margin:30.52%;left:5.9%;">
+                                <img src="whitepoint.png" id="WP4" onmouseover="fun0(this);" width="2.5%" class="img-responsive center-block animated fadeIn" style="animation-duration: 5s; margin:27%;left:25%;">     
+                                <img src="whitepoint.png" id="WP5" onmouseover="fun0(this);" width="2.5%" class="img-responsive center-block animated fadeIn" style="animation-duration: 5s; margin:47.3%;left:-41.4%;">
+                                <img src="whitepoint.png" id="WP6" onmouseover="fun0(this);" width="2.5%" class="img-responsive center-block animated fadeIn" style="animation-duration: 5s; margin:50.1%;left:-16.85%;">
+                                <img src="whitepoint.png" id="WP7" onmouseover="fun0(this);" width="2.5%" class="img-responsive center-block animated fadeIn" style="animation-duration: 5s; margin:44.65%;left:4.8%;"> 
+
+                                <img src="ball-01.png" id="controlla1" width="15.4%" class="img-responsive center-block" style="margin:5.9%;left:13.88%;">                     
+                                <img src="teampic_1.png" id="controllb1" onmouseover="fun2(this);" onmouseout="fun3(this);" width="14.3%" class="img-responsive center-block" style="margin:6.3%;left:13.99%;">
+                                <img src="halfpoint.png" id="controllc1" width="13.7%" class="img-responsive center-block" style="margin:16.5%; left:4.18%;">
+                                <img src="MN_1.png" id="controlld1" width="8.5%" class="img-responsive center-block" style="margin:16.5%;left:6.68%;">
+                              
+                                <img src="ball-01.png" id="controlla2" width="15.4%" class="img-responsive center-block" style="margin:27.9%;left:-20.15%;">                     
+                                <img src="teampic_2.png" id="controllb2" onmouseover="fun2(this);" onmouseout="fun3(this);" width="14.3%" class="img-responsive center-block" style="margin:28.3%;left:-20.04%;">
+                                <img src="halfpoint.png" id="controllc2" width="13.7%" class="img-responsive center-block" style="margin:38.5%; left:-29.85%;">
+                                <img src="MN_2.png" id="controlld2" width="8.5%" class="img-responsive center-block" style="margin:38.5%;left:-27.35%;">
+
+                                <img src="ball-01.png" id="controlla3" width="15.4%" class="img-responsive center-block" style="margin:23.9%;left:5.95%;">                     
+                                <img src="teampic_3.png" id="controllb3" onmouseover="fun2(this);" onmouseout="fun3(this);" width="14.3%" class="img-responsive center-block" style="margin:24.3%;left:6.06%;">
+                                <img src="halfpoint.png" id="controllc3" width="13.7%" class="img-responsive center-block" style="margin:34.5%; left:-4.05%;">
+                                <img src="MN_3.png" id="controlld3" width="8.5%" class="img-responsive center-block" style="margin:34.5%;left:-1.35%;">
+
+                                <img src="ball-01.png" id="controlla4" width="15.4%" class="img-responsive center-block" style="margin:20.4%;left:24.95%;">                     
+                                <img src="teampic_4.png" id="controllb4" onmouseover="fun2(this);" onmouseout="fun3(this);" width="14.3%" class="img-responsive center-block" style="margin:20.8%;left:25.06%;">
+                                <img src="halfpoint.png" id="controllc4" width="13.7%" class="img-responsive center-block" style="margin:31%; left:14.95%;">
+                                <img src="MN_4.png" id="controlld4" width="8.5%" class="img-responsive center-block" style="margin:31%;left:17.75%;">
+
+                                <img src="ball-01.png" id="controlla5" width="15.4%" class="img-responsive center-block" style="margin:40.4%;left:-40.95%;">                     
+                                <img src="teampic_5.png" id="controllb5" onmouseover="fun2(this);" onmouseout="fun3(this);" width="14.3%" class="img-responsive center-block" style="margin:40.8%;left:-40.84%;">
+                                <img src="halfpoint.png" id="controllc5" width="13.7%" class="img-responsive center-block" style="margin:51%; left:-50.65%;">
+                                <img src="MN_5.png" id="controlld5" width="8.5%" class="img-responsive center-block" style="margin:51%;left:-48.1%;">
+
+                                <img src="ball-01.png" id="controlla6" width="15.4%" class="img-responsive center-block" style="margin:43.4%;left:-16.59%;">                     
+                                <img src="teampic_6.png" id="controllb6" onmouseover="fun2(this);" onmouseout="fun3(this);" width="14.3%" class="img-responsive center-block" style="margin:43.8%;left:-16.48%;">
+                                <img src="halfpoint.png" id="controllc6" width="13.7%" class="img-responsive center-block" style="margin:54%; left:-26.29%;">
+                                <img src="MN_6.png" id="controlld6" width="8.5%" class="img-responsive center-block" style="margin:54%;left:-23.69%;">
+
+                                <img src="ball-01.png" id="controlla7" width="15.4%" class="img-responsive center-block" style="margin:38.4%;left:4.65%;">                     
+                                <img src="teampic_7.png" id="controllb7" onmouseover="fun2(this);" onmouseout="fun3(this);" width="14.3%" class="img-responsive center-block" style="margin:38.8%;left:4.76%;">
+                                <img src="halfpoint.png" id="controllc7" width="13.7%" class="img-responsive center-block" style="margin:49%; left:-5.35%;">
+                                <img src="MN_7.png" id="controlld7" width="8.5%" class="img-responsive center-block" style="margin:49%;left:-2.65%;">
+
+                         </div>
+                 
+                         
+                </div>
+                </div>
+           
+                <div class="bg">             
+                    <img src="M_11.jpg"> 
+                </div>
+                <div class = "bg" style="opacity:0.9;">
+                     <img src="M_12.png">
+                </div>
+        </div>
+</body>
+
+</html>
+<script>
+function funa(){
+    var mypica1=document.getElementById("controlla1");
+    var mypicb1=document.getElementById("controllb1");
+    var mypicc1=document.getElementById("controllc1");
+    var mypicd1=document.getElementById("controlld1");
+
+    var mypica2=document.getElementById("controlla2");
+    var mypicb2=document.getElementById("controllb2");
+    var mypicc2=document.getElementById("controllc2");
+    var mypicd2=document.getElementById("controlld2");
+
+    var mypica3=document.getElementById("controlla3");
+    var mypicb3=document.getElementById("controllb3");
+    var mypicc3=document.getElementById("controllc3");
+    var mypicd3=document.getElementById("controlld3");
+
+    var mypica4=document.getElementById("controlla4");
+    var mypicb4=document.getElementById("controllb4");
+    var mypicc4=document.getElementById("controllc4");
+    var mypicd4=document.getElementById("controlld4");
+
+    var mypica5=document.getElementById("controlla5");
+    var mypicb5=document.getElementById("controllb5");
+    var mypicc5=document.getElementById("controllc5");
+    var mypicd5=document.getElementById("controlld5");
+
+    var mypica6=document.getElementById("controlla6");
+    var mypicb6=document.getElementById("controllb6");
+    var mypicc6=document.getElementById("controllc6");
+    var mypicd6=document.getElementById("controlld6");
+
+    var mypica7=document.getElementById("controlla7");
+    var mypicb7=document.getElementById("controllb7");
+    var mypicc7=document.getElementById("controllc7");
+    var mypicd7=document.getElementById("controlld7");
+
+    mypica1.style.display="none";
+    mypicb1.style.display="none";
+    mypicc1.style.display="none";
+    mypicd1.style.display="none";
+
+    mypica2.style.display="none";
+    mypicb2.style.display="none";
+    mypicc2.style.display="none";
+    mypicd2.style.display="none";
+
+    mypica3.style.display="none";
+    mypicb3.style.display="none";
+    mypicc3.style.display="none";
+    mypicd3.style.display="none";
+
+    mypica4.style.display="none";
+    mypicb4.style.display="none";
+    mypicc4.style.display="none";
+    mypicd4.style.display="none";
+
+    mypica5.style.display="none";
+    mypicb5.style.display="none";
+    mypicc5.style.display="none";
+    mypicd5.style.display="none";
+
+    mypica6.style.display="none";
+    mypicb6.style.display="none";
+    mypicc6.style.display="none";
+    mypicd6.style.display="none";
+
+    mypica7.style.display="none";
+    mypicb7.style.display="none";
+    mypicc7.style.display="none";
+    mypicd7.style.display="none";
+}
+
+    function fun0(obj){
+        var mythumbnail=obj.id;
+        var mywp=obj.id;
+        var mypicture= mythumbnail.substr(9);
+        if(mypicture == ""){
+            var mypicture= mythumbnail.substr(2);
+        }
+        else{
+            var mypicture= mythumbnail.substr(9);
+        }
+       
+        var mydiv1=document.getElementById("picture1");
+        var mydiv2=document.getElementById("picture2");
+        var mydiv3=document.getElementById("picture3");
+        var mydiv4=document.getElementById("picture4");
+        var mydiv5=document.getElementById("picture5");
+        var mydiv6=document.getElementById("picture6");
+        var mydiv7=document.getElementById("picture7");
+
+        var mypica1=document.getElementById("controlla1");
+        var mypicb1=document.getElementById("controllb1");
+        var mypicc1=document.getElementById("controllc1");
+        var mypicd1=document.getElementById("controlld1");
+
+        var mypica2=document.getElementById("controlla2");
+        var mypicb2=document.getElementById("controllb2");
+        var mypicc2=document.getElementById("controllc2");
+        var mypicd2=document.getElementById("controlld2");
+
+        var mypica3=document.getElementById("controlla3");
+        var mypicb3=document.getElementById("controllb3");
+        var mypicc3=document.getElementById("controllc3");
+        var mypicd3=document.getElementById("controlld3");
+
+        var mypica4=document.getElementById("controlla4");
+        var mypicb4=document.getElementById("controllb4");
+        var mypicc4=document.getElementById("controllc4");
+        var mypicd4=document.getElementById("controlld4");
+
+        var mypica5=document.getElementById("controlla5");
+        var mypicb5=document.getElementById("controllb5");
+        var mypicc5=document.getElementById("controllc5");
+        var mypicd5=document.getElementById("controlld5");
+        
+        var mypica6=document.getElementById("controlla6");
+        var mypicb6=document.getElementById("controllb6");
+        var mypicc6=document.getElementById("controllc6");
+        var mypicd6=document.getElementById("controlld6");
+    
+        var mypica7=document.getElementById("controlla7");
+        var mypicb7=document.getElementById("controllb7");
+        var mypicc7=document.getElementById("controllc7");
+        var mypicd7=document.getElementById("controlld7");
+
+        switch (mypicture)
+        {
+            case "1":
+            mydiv1.style.display="block";
+            mydiv2.style.display="none";
+            mydiv3.style.display="none";
+            mydiv4.style.display="none";
+            mydiv5.style.display="none";
+            mydiv6.style.display="none";
+            mydiv7.style.display="none";
+
+            mypica1.style.display="block";
+            mypicb1.style.display="block";
+            mypicc1.style.display="block";
+            mypicd1.style.display="block";
+
+            mypica2.style.display="none";
+            mypicb2.style.display="none";
+            mypicc2.style.display="none";
+            mypicd2.style.display="none";
+
+            mypica3.style.display="none";
+            mypicb3.style.display="none";
+            mypicc3.style.display="none";
+            mypicd3.style.display="none";
+
+            mypica4.style.display="none";
+            mypicb4.style.display="none";
+            mypicc4.style.display="none";
+            mypicd4.style.display="none";
+
+            mypica5.style.display="none";
+            mypicb5.style.display="none";
+            mypicc5.style.display="none";
+            mypicd5.style.display="none";
+
+            mypica6.style.display="none";
+            mypicb6.style.display="none";
+            mypicc6.style.display="none";
+            mypicd6.style.display="none";
+    
+            mypica7.style.display="none";
+            mypicb7.style.display="none";
+            mypicc7.style.display="none";
+            mypicd7.style.display="none";
+     
+            break;
+
+            case "2":
+            mydiv1.style.display="none";
+            mydiv2.style.display="block";
+            mydiv3.style.display="none";
+            mydiv4.style.display="none";
+            mydiv5.style.display="none";
+            mydiv6.style.display="none";
+            mydiv7.style.display="none";
+           
+            mypica1.style.display="none";
+            mypicb1.style.display="none";
+            mypicc1.style.display="none";
+            mypicd1.style.display="none";
+
+            mypica2.style.display="block";
+            mypicb2.style.display="block";
+            mypicc2.style.display="block";
+            mypicd2.style.display="block";
+
+            mypica3.style.display="none";
+            mypicb3.style.display="none";
+            mypicc3.style.display="none";
+            mypicd3.style.display="none";
+
+            mypica4.style.display="none";
+            mypicb4.style.display="none";
+            mypicc4.style.display="none";
+            mypicd4.style.display="none";
+
+            mypica5.style.display="none";
+            mypicb5.style.display="none";
+            mypicc5.style.display="none";
+            mypicd5.style.display="none";
+
+            mypica6.style.display="none";
+            mypicb6.style.display="none";
+            mypicc6.style.display="none";
+            mypicd6.style.display="none";
+    
+            mypica7.style.display="none";
+            mypicb7.style.display="none";
+            mypicc7.style.display="none";
+            mypicd7.style.display="none";
+           
+            break;
+
+            case "3":
+            mydiv1.style.display="none";
+            mydiv2.style.display="none";
+            mydiv3.style.display="block";
+            mydiv4.style.display="none";
+            mydiv5.style.display="none";
+            mydiv6.style.display="none";
+            mydiv7.style.display="none";
+
+            mypica1.style.display="none";
+            mypicb1.style.display="none";
+            mypicc1.style.display="none";
+            mypicd1.style.display="none";
+
+            mypica2.style.display="none";
+            mypicb2.style.display="none";
+            mypicc2.style.display="none";
+            mypicd2.style.display="none";
+
+            mypica3.style.display="block";
+            mypicb3.style.display="block";
+            mypicc3.style.display="block";
+            mypicd3.style.display="block";
+
+            mypica4.style.display="none";
+            mypicb4.style.display="none";
+            mypicc4.style.display="none";
+            mypicd4.style.display="none";
+
+            mypica5.style.display="none";
+            mypicb5.style.display="none";
+            mypicc5.style.display="none";
+            mypicd5.style.display="none";
+
+            mypica6.style.display="none";
+            mypicb6.style.display="none";
+            mypicc6.style.display="none";
+            mypicd6.style.display="none";
+    
+            mypica7.style.display="none";
+            mypicb7.style.display="none";
+            mypicc7.style.display="none";
+            mypicd7.style.display="none";
+    
+            break;
+
+            case "4":
+            mydiv1.style.display="none";
+            mydiv2.style.display="none";
+            mydiv3.style.display="none";
+            mydiv4.style.display="block";
+            mydiv5.style.display="none";
+            mydiv6.style.display="none";
+            mydiv7.style.display="none";
+
+            mypica1.style.display="none";
+            mypicb1.style.display="none";
+            mypicc1.style.display="none";
+            mypicd1.style.display="none";
+
+            mypica2.style.display="none";
+            mypicb2.style.display="none";
+            mypicc2.style.display="none";
+            mypicd2.style.display="none";
+
+            mypica3.style.display="none";
+            mypicb3.style.display="none";
+            mypicc3.style.display="none";
+            mypicd3.style.display="none";
+
+            mypica4.style.display="block";
+            mypicb4.style.display="block";
+            mypicc4.style.display="block";
+            mypicd4.style.display="block";
+
+            mypica5.style.display="none";
+            mypicb5.style.display="none";
+            mypicc5.style.display="none";
+            mypicd5.style.display="none";
+
+            mypica6.style.display="none";
+            mypicb6.style.display="none";
+            mypicc6.style.display="none";
+            mypicd6.style.display="none";
+    
+            mypica7.style.display="none";
+            mypicb7.style.display="none";
+            mypicc7.style.display="none";
+            mypicd7.style.display="none";
+
+            break;
+
+            case "5":
+            mydiv1.style.display="none";
+            mydiv2.style.display="none";
+            mydiv3.style.display="none";
+            mydiv4.style.display="none";
+            mydiv5.style.display="block";
+            mydiv6.style.display="none";
+            mydiv7.style.display="none";
+
+             mypica1.style.display="none";
+            mypicb1.style.display="none";
+            mypicc1.style.display="none";
+            mypicd1.style.display="none";
+
+            mypica2.style.display="none";
+            mypicb2.style.display="none";
+            mypicc2.style.display="none";
+            mypicd2.style.display="none";
+
+            mypica3.style.display="none";
+            mypicb3.style.display="none";
+            mypicc3.style.display="none";
+            mypicd3.style.display="none";
+
+            mypica4.style.display="none";
+            mypicb4.style.display="none";
+            mypicc4.style.display="none";
+            mypicd4.style.display="none";
+
+            mypica5.style.display="block";
+            mypicb5.style.display="block";
+            mypicc5.style.display="block";
+            mypicd5.style.display="block";
+
+            mypica6.style.display="none";
+            mypicb6.style.display="none";
+            mypicc6.style.display="none";
+            mypicd6.style.display="none";
+    
+            mypica7.style.display="none";
+            mypicb7.style.display="none";
+            mypicc7.style.display="none";
+            mypicd7.style.display="none";
+
+            break;
+
+            case "6":
+            mydiv1.style.display="none";
+            mydiv2.style.display="none";
+            mydiv3.style.display="none";
+            mydiv4.style.display="none";
+            mydiv5.style.display="none";
+            mydiv6.style.display="block";
+            mydiv7.style.display="none";
+
+            mypica1.style.display="none";
+            mypicb1.style.display="none";
+            mypicc1.style.display="none";
+            mypicd1.style.display="none";
+
+            mypica2.style.display="none";
+            mypicb2.style.display="none";
+            mypicc2.style.display="none";
+            mypicd2.style.display="none";
+
+            mypica3.style.display="none";
+            mypicb3.style.display="none";
+            mypicc3.style.display="none";
+            mypicd3.style.display="none";
+
+            mypica4.style.display="none";
+            mypicb4.style.display="none";
+            mypicc4.style.display="none";
+            mypicd4.style.display="none";
+
+            mypica5.style.display="none";
+            mypicb5.style.display="none";
+            mypicc5.style.display="none";
+            mypicd5.style.display="none";
+
+            mypica6.style.display="block";
+            mypicb6.style.display="block";
+            mypicc6.style.display="block";
+            mypicd6.style.display="block";
+    
+            mypica7.style.display="none";
+            mypicb7.style.display="none";
+            mypicc7.style.display="none";
+            mypicd7.style.display="none";
+
+            break;
+
+            case "7":
+            mydiv1.style.display="none";
+            mydiv2.style.display="none";
+            mydiv3.style.display="none";
+            mydiv4.style.display="none";
+            mydiv5.style.display="none";
+            mydiv6.style.display="none";
+            mydiv7.style.display="block";
+
+            mypica1.style.display="none";
+            mypicb1.style.display="none";
+            mypicc1.style.display="none";
+            mypicd1.style.display="none";
+
+            mypica2.style.display="none";
+            mypicb2.style.display="none";
+            mypicc2.style.display="none";
+            mypicd2.style.display="none";
+
+            mypica3.style.display="none";
+            mypicb3.style.display="none";
+            mypicc3.style.display="none";
+            mypicd3.style.display="none";
+
+            mypica4.style.display="none";
+            mypicb4.style.display="none";
+            mypicc4.style.display="none";
+            mypicd4.style.display="none";
+
+            mypica5.style.display="none";
+            mypicb5.style.display="none";
+            mypicc5.style.display="none";
+            mypicd5.style.display="none";
+
+            mypica6.style.display="none";
+            mypicb6.style.display="none";
+            mypicc6.style.display="none";
+            mypicd6.style.display="none";
+    
+            mypica7.style.display="block";
+            mypicb7.style.display="block";
+            mypicc7.style.display="block";
+            mypicd7.style.display="block";
+
+            break;
+
+
+
+
+        }
+    }
+ function fun1(){
+
+        var mydiv1=document.getElementById("picture1");
+        var mydiv2=document.getElementById("picture2");
+        var mydiv3=document.getElementById("picture3");
+        var mydiv4=document.getElementById("picture4");
+        var mydiv5=document.getElementById("picture5");
+        var mydiv4=document.getElementById("picture6");
+        var mydiv5=document.getElementById("picture7");
+
+        mydiv1.style.display="none";
+        mydiv2.style.display="none";
+        mydiv3.style.display="none";
+        mydiv4.style.display="none";
+        mydiv5.style.display="none";
+        mydiv6.style.display="none";
+        mydiv7.style.display="none";
+ }
+ function fun2(obj){     
+    var mythumbnail=obj.id;
+    var mypicture= mythumbnail.substr(9);
+
+    var mypicc1=document.getElementById("controllc1");
+    var mypicd1=document.getElementById("controlld1");
+
+    var mypicc2=document.getElementById("controllc2");
+    var mypicd2=document.getElementById("controlld2");
+
+    var mypicc3=document.getElementById("controllc3");
+    var mypicd3=document.getElementById("controlld3");
+
+    var mypicc4=document.getElementById("controllc4");
+    var mypicd4=document.getElementById("controlld4");
+
+    var mypicc5=document.getElementById("controllc5");
+    var mypicd5=document.getElementById("controlld5");
+
+    var mypicc6=document.getElementById("controllc6");
+    var mypicd6=document.getElementById("controlld6");
+
+    var mypicc7=document.getElementById("controllc7");
+    var mypicd7=document.getElementById("controlld7");
+
+        switch (mypicture)
+        {
+            case "1":
+            document.getElementById("controllb1").src="MWN_1.png";
+            mypicc1.style.display="none";
+            mypicd1.style.display="none";
+            break;
+
+            case "2":
+            document.getElementById("controllb2").src="MWN_2.png";
+            mypicc2.style.display="none";
+            mypicd2.style.display="none";
+
+            break;
+
+            case "3":
+            document.getElementById("controllb3").src="MWN_3.png";
+            mypicc3.style.display="none";
+            mypicd3.style.display="none";
+
+            break;
+
+            case "4":
+            document.getElementById("controllb4").src="MWN_4.png";
+            mypicc4.style.display="none";
+            mypicd4.style.display="none";
+
+            break;
+
+            case "5":
+            document.getElementById("controllb5").src="MWN_5.png";
+            mypicc5.style.display="none";
+            mypicd5.style.display="none";
+
+            break;
+
+            case "6":
+            document.getElementById("controllb6").src="MWN_6.png";
+            mypicc6.style.display="none";
+            mypicd6.style.display="none";
+            break;
+
+            case "7":
+            document.getElementById("controllb7").src="MWN_7.png";
+            mypicc7.style.display="none";
+            mypicd7.style.display="none";
+            break;
+        }
+    }
+function fun3(obj){     
+    var mythumbnail=obj.id;
+    var mypicture= mythumbnail.substr(9);
+
+    var mypicc1=document.getElementById("controllc1");
+    var mypicd1=document.getElementById("controlld1");
+
+    var mypicc2=document.getElementById("controllc2");
+    var mypicd2=document.getElementById("controlld2");
+
+    var mypicc3=document.getElementById("controllc3");
+    var mypicd3=document.getElementById("controlld3");
+
+    var mypicc4=document.getElementById("controllc4");
+    var mypicd4=document.getElementById("controlld4");
+
+    var mypicc5=document.getElementById("controllc5");
+    var mypicd5=document.getElementById("controlld5");
+
+    var mypicc6=document.getElementById("controllc6");
+    var mypicd6=document.getElementById("controlld6");
+
+    var mypicc7=document.getElementById("controllc7");
+    var mypicd7=document.getElementById("controlld7");
+
+        switch (mypicture)
+        {
+            case "1":
+            document.getElementById("controllb1").src="teampic_1.png";
+            mypicc1.style.display="block";        
+            mypicd1.style.display="block";
+            break;
+
+            case "2":
+            document.getElementById("controllb2").src="teampic_2.png";
+            mypicc2.style.display="block";
+            mypicd2.style.display="block";
+
+            break;
+
+            case "3":
+            document.getElementById("controllb3").src="teampic_3.png";
+            mypicc3.style.display="block";
+            mypicd3.style.display="block";
+
+            break;
+
+            case "4":
+            document.getElementById("controllb4").src="teampic_4.png";
+            mypicc4.style.display="block";
+            mypicd4.style.display="block";
+
+            break;
+
+            case "5":
+            document.getElementById("controllb5").src="teampic_5.png";
+            mypicc5.style.display="block";
+            mypicd5.style.display="block";
+
+            break;
+
+            case "6":
+            document.getElementById("controllb6").src="teampic_6.png";
+            mypicc6.style.display="block";
+            mypicd6.style.display="block";
+            break;
+
+            case "7":
+            document.getElementById("controllb7").src="teampic_7.png";
+            mypicc7.style.display="block";
+            mypicd7.style.display="block";
+            break;
+        }
+
+}
+    for(i in document.images)document.images[i].ondragstart=imgdragstart;  
+
+        funa();
+</script>

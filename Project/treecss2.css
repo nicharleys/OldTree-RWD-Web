@@ -1,0 +1,100 @@
+        body{ 
+            overflow-x:hidden; 
+            overflow-y:hidden; 
+        }
+        .bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: -999;
+        }
+        .bg img {
+            min-height: 100%;
+            min-width: 1000px;
+            width: 100%;
+        }
+        @media screen and (max-width: 1000px) {
+            img.bg {
+                left: 50%;
+                margin-left: -500px;
+            }
+        }
+        .col-sm-1-5,
+        .col-md-1-5,
+        .col-lg-1-5 {
+            position: relative;
+            min-height: 1px;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        .col-xs-1-5 {
+            width: 20%;
+            float: left;
+        }
+        @media (min-width: 768px) {
+            .col-sm-1-5 {
+                width: 20%;
+                float: left;
+            }
+        }
+        @media (min-width: 992px) {
+            .col-md-1-5 {
+                width: 20%;
+                float: left;
+            }
+        }
+        @media (min-width: 1200px) {
+            .col-lg-1-5 {
+                width: 20%;
+                float: left;
+            }
+        }
+        #P1, #WP1, #WP2, #WP3, #WP4, #WP5, #WP6, #WP7{
+            position:absolute;
+            z-index:2;
+        }
+        #controlla1, #controlla2, #controlla3, #controlla4, #controlla5, #controlla6, #controlla7{
+            position:absolute;
+            z-index:3;
+        }
+        #controllb1, #controllb2, #controllb3, #controllb4, #controllb5, #controllb6, #controllb7{
+            position:absolute;
+            z-index:4;
+        }
+        #controllc1, #controllc2, #controllc3, #controllc4, #controllc5, #controllc6, #controllc7{
+            position:absolute;
+            z-index:5;
+        }
+        #controlld1, #controlld2, #controlld3, #controlld4, #controlld5, #controlld6, #controlld7{
+            position:absolute;
+            z-index:6;
+        }
+        #thumbnail1, #thumbnail2, #thumbnail3, #thumbnail4, #thumbnail5, #thumbnail6, #thumbnail7{
+            z-index:0;
+        }  
+        #picture1,#picture2,#picture3,#picture4,#picture5,#picture6,#picture7,#picture8,#picture9{
+            height:50%;
+            width:2%;
+            display:none;
+            position:absolute;
+            top: 10%;
+            left:-15%;
+            background:#F2E325;
+            filter:Alpha(Opacity=40);
+            z-index:1;
+        }
+        #up {
+            position:absolute;
+            height:100%;
+            width:100%;
+            left:-5%;
+        }
+        #NULL{
+            -moz-user-select: none;   
+            -webkit-user-select: none;   
+            -ms-user-select: none;   
+            -khtml-user-select: none;   
+            user-select: none;  
+        }

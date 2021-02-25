@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en" style="height: 100%">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />     
+	<title>光陰憶樹</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script language="javascript">  
+     function imgdragstart(){return false;}  
+    </script>
+    <style>
+        #body{ 
+            overflow-x:hidden; 
+            overflow-y:hidden; 
+        }
+        .bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: -999;
+        }
+        .bg img {
+            min-height: 100%;
+            min-width: 1000px;
+            width: 100%;
+        }
+        @media screen and (max-width: 1000px) {
+            img.bg {
+                left: 50%;
+                margin-left: -500px;
+            }
+        }
+        .col-sm-1-5,
+        .col-md-1-5,
+        .col-lg-1-5 {
+            position: relative;
+            min-height: 1px;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        .col-xs-1-5 {
+            width: 20%;
+            float: left;
+        }
+        @media (min-width: 768px) {
+            .col-sm-1-5 {
+                width: 20%;
+                float: left;
+            }
+        }
+        @media (min-width: 992px) {
+            .col-md-1-5 {
+                width: 20%;
+                float: left;
+            }
+        }
+        @media (min-width: 1200px) {
+            .col-lg-1-5 {
+                width: 20%;
+                float: left;
+            }
+        }
+        #P1, #WP1, #WP2, #WP3, #WP4, #WP5{
+            position:absolute;
+            z-index:2;
+           }
+        #controlla1, #controlla2, #controlla3, #controlla4, #controlla5{
+            position:absolute;
+            z-index:3;
+        }
+        #controllb1, #controllb2, #controllb3, #controllb4, #controllb5{
+            position:absolute;
+            z-index:4;
+        }
+        #controllc1, #controllc2, #controllc3, #controllc4, #controllc5{
+            position:absolute;
+            z-index:5;
+        }
+        #controlld1, #controlld2, #controlld3, #controlld4, #controlld5{
+            position:absolute;
+            z-index:6;
+        }
+        #thumbnail1, #thumbnail2, #thumbnail3, #thumbnail4, #thumbnail5{
+            z-index:0;
+        }  
+        #picture1,#picture2,#picture3,#picture4,#picture5{
+            height:50%;
+            width:2%;
+            display:none;
+            position:absolute;
+            top: 10%;
+            left:-15%;
+            background:#F2E325;
+            filter:Alpha(Opacity=40);
+            z-index:1;
+        }
+        #showTree1{
+            height:50%;
+            width:10%;
+            display:none;
+            position:absolute;
+            top: 10%;
+            left:10%;
+            background-image:url('ball-03.png');
+            filter:Alpha(Opacity=40);
+            z-index:1;
+        }
+        #up {
+            position:absolute;
+            height:100%;
+            width:100%;
+            left:-90%;
+            margin:15.9%;
+        }
+        #NULL{
+            -moz-user-select: none;   
+            -webkit-user-select: none;   
+            -ms-user-select: none;   
+            -khtml-user-select: none;   
+            user-select: none;  
+        }
+        #word {
+            margin:50%;
+            z-index:2;
+        }
+
+        #littlep {
+            z-index:1;
+        }
+        #white {
+            position:absolute;
+            height:150%;
+            width:100%;
+            z-index:1;
+            background:#ffffff;
+            filter:Alpha(Opacity=40);
+        }
+        #t4_pic1 {
+            position:absolute;
+            margin-top:15%;
+            left:16.5%;
+            height:20%;
+            width:20%;
+            z-index:2;
+        }
+        #t4_pic2 {
+            position:absolute;
+            margin-top:27.5%;
+            left:9.5%;
+            height:27%;
+            width:27%;
+            z-index:2;
+        }
+        #t4_pic3 {
+            position:absolute;
+            margin-top:49%;
+            left:14.5%;
+            height:22%;
+            width:22%;
+            z-index:2;
+        }
+        #t4_pic4 {
+            position:absolute;
+            margin-top:3%;
+            left:38%;
+            height:25%;
+            width:25%;
+            z-index:2;
+        }
+        #t4_pic5 {
+            position:absolute;
+            margin-top:21%;
+            left:38%;
+            height:30%;
+            width:30%;
+            z-index:2;
+        }
+        #t4_pic6 {
+            position:absolute;
+            margin-top:42.5%;
+            left:38%;
+            height:40%;
+            width:40%;
+            z-index:2;
+        }
+        #t4_pic7 {
+            position:absolute;
+            margin-top:26.5%;
+            left:69.5%;
+            height:22%;
+            width:22%;
+            z-index:2;
+        }
+
+    </style>
+    
+</head>
+<body id = "body" onbeforeunload="fun1()">
+
+        <div class="row">
+                <div class="row" align="center" valign="center">
+                        <div class="col-md-6 col-xs-6 col-sm-1-5 col-lg-1-5">
+                                <a href="tree_index.html"><img src="logo-01.png" id="form1" width="90%" onmouseover="fun1();" class="img-responsive center-block animated fadeInDown" style="animation-duration: 1.5s;"></a>
+                        </div>
+                        <div class="col-md-1-5 col-xs-1-1 col-sm-1-5 col-lg-1-5"></div>
+                        <div class="col-md-1-5 col-xs-1-1 col-sm-1-5 col-lg-1-5"></div>
+                        <div class="col-md-1-5 col-xs-1-1 col-sm-1-5 col-lg-1-5"></div>
+                        <div class="col-md-6 col-xs-6 col-sm-1-5 col-lg-1-5">
+                                <a href="tree_member.html"><img src="xx1.png" id="form1" width="90%" onmouseover="fun1();" class="img-responsive center-block animated fadeInDown" style="animation-duration: 1.5s;"></a>
+                        </div>
+                </div>
+                <div class="row">
+                     <div class="col-md-6 col-xs-12 col-sm-6 col-lg-6">
+
+                            <div class="row">
+                                    <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"><br><br></div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                    <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2 animated fadeInLeft" style="animation-duration: 1.5s;"><img src="TP_treename1.png" width="65%" class="img-responsive left-block" ></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                    <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3"><img src="NULL1.jpg" width="90%" class="img-responsive left-block" style="opacity:0;" id = "NULL"></div>
+                            </div>
+    
+                            <div class="row" >
+                                    <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                    <div class="col-md-1 col-xs-1 col-sm-1 col-lg-1 animated fadeInLeft" style="animation-duration: 1.7s;">
+                                        <img src="littlepic1.png" width="90%" class="img-responsive left-block littlep" >
+                                    </div>
+                                    <img src="t4_word_1.png" width="10%" class="img-responsive left-block word animated fadeInDown"; style="animation-duration: 2s;">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                    <div class="col-md-1 col-xs-1 col-sm-1 col-lg-1"><img src="NULL1.jpg" width="90%" class="img-responsive left-block" style="opacity:0;" id = "NULL"></div>
+                                </div>
+    
+                            <div class="row">
+                                    <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                    <div class="col-md-1 col-xs-1 col-sm-1 col-lg-1 animated fadeInLeft" style="animation-duration: 1.9s;">
+                                        <img src="littlepic2.png" width="90%" class="img-responsive left-block" >
+                                    </div>
+                                    <img src="t4_word_2.png" width="10%" class="img-responsive left-block word animated fadeInDown"; style="animation-duration: 2s;">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                    <div class="col-md-1 col-xs-1 col-sm-1 col-lg-1"><img src="NULL1.jpg" width="90%" class="img-responsive left-block" style="opacity:0;" id = "NULL"></div>
+                            </div>
+    
+                            <div class="row">
+                                    <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                    <div class="col-md-1 col-xs-1 col-sm-1 col-lg-1 animated fadeInLeft" style="animation-duration: 2.1s;">
+                                        <img src="littlepic3.png" width="90%" class="img-responsive left-block" >
+                                    </div>
+                                    <img src="t4_word_3.png" width="10%" class="img-responsive left-block word animated fadeInDown"; style="animation-duration: 2s;">
+            
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                    <div class="col-md-1 col-xs-1 col-sm-1 col-lg-1"><img src="NULL1.jpg" width="90%" class="img-responsive left-block" style="opacity:0;" id = "NULL"></div>
+                            </div>
+    
+                            <div class="row">
+                                    <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                    <div class="col-md-1 col-xs-1 col-sm-1 col-lg-1 animated fadeInLeft" style="animation-duration: 2.3s;">
+                                        <img src="littlepic4.png" width="90%" class="img-responsive left-block" >
+                                    </div>
+                                    <img src="t4_word-4.png" width="32%" class="img-responsive left-block word animated fadeInDown"; style="animation-duration: 2s;">
+                            </div>
+
+                            <div class="row">
+                                    <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                    <div class="col-md-5 col-xs-5 col-sm-5 col-lg-5"><img src="NULL1.jpg" width="90%" class="img-responsive left-block" style="opacity:0;" id = "NULL"></div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                    <div class="col-md-1 col-xs-1 col-sm-1 col-lg-1 animated fadeInLeft" style="animation-duration: 2.3s;">
+                                        <img src="mouse.png" width="70%" class="img-responsive center-block" >
+                                    </div>
+                                    
+                            </div>
+                            <div class="row">
+                                    <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"></div>
+                                    <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2"><img src="NULL1.jpg" width="90%" class="img-responsive left-block" style="opacity:0;" id = "NULL"></div>
+                            </div>
+
+                    </div>
+                    
+
+                </div>  
+                <div class="bg">             
+                                <img src="M_13.jpg"> 
+                </div>
+                <div class = "bg" style="opacity:0.9;">
+                                 <img src="M_12.png">
+                </div>
+              
+
+        </div>
+        
+        <div id="white">
+            <div id = "t4_pic1">
+                    <img src="t4_pic1.jpg" class="img-responsive left-block";>
+            </div>
+            <div id = "t4_pic2">
+                    <img src="t4_pic2.jpg" class="img-responsive left-block";>
+            </div>
+            <div id = "t4_pic3">
+                    <img src="t4_pic3.jpg" class="img-responsive left-block";>
+            </div>
+            <div id = "t4_pic4">
+                    <img src="t4_pic4.jpg" class="img-responsive left-block";>
+            </div>
+            <div id = "t4_pic5">
+                    <img src="t4_pic5.jpg" class="img-responsive left-block";>
+            </div>
+            <div id = "t4_pic6">
+                    <img src="t4_pic6.jpg" class="img-responsive left-block";>
+            </div>
+            <div id = "t4_pic7">
+                    <img src="t4_pic7.jpg" class="img-responsive left-block";>
+            </div>
+        </div>        
+
+
+</body>
+</html>
+<script>
+function MouseWheel (e) {
+  e = e || window.event;
+ // alert(['scrolled ', (( e.wheelDelta <= 0 || e.detail > 0) ? 'down' : 'up')].join(''));
+  if(e.wheelDelta <= 0){
+    document.getElementById("body").style.overflowY="auto";
+  }
+  if(e.wheelDelta > 0){
+    if(document.documentElement.scrollTop == 0){
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.getElementById("body").style.overflowY='hidden';
+    }
+  }
+}
+
+// hook event listener on window object
+if ('onmousewheel' in window) {
+  window.onmousewheel = MouseWheel;
+} else if ('onmousewheel' in document) {
+  document.onmousewheel = MouseWheel;
+} else if ('addEventListener' in window) {
+  window.addEventListener("mousewheel", MouseWheel, false);
+  window.addEventListener("DOMMouseScroll", MouseWheel, false);
+}
+
+
+function fun1() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+
+
+
+
+
+
+</script>
